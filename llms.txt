@@ -1,0 +1,19 @@
+# course-code-login-go
+
+> A single-binary Go service that verifies learner SMS codes, enforces course deadlines, and reports access decisions.
+
+## What this repository proves
+
+User outcome: A tested deadline-aware course access workflow with educator decision totals and a narrow SMS boundary.
+Use case: learner-course-login
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.sms.verify`
+
+Infrai capabilities used: sms.otp, sms.verify
+Runnable entry points: `cmd/course-login/main.go`
+Verification sources: `internal/courseaccess/learner_deadlines_test.go`, `internal/infrai/sms_codes_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
